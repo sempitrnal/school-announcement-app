@@ -21,13 +21,18 @@ class Registrar(metaclass=Singleton):
     def remove_student(self, student):
         self.__students.remove(student)
         self.am.detach(student)
-
+        
+    def get_students_list(self) -> list:
+        return self.__students;
+    
     def get_students(self):
-        print("Students: ")
+        print("\nStudents: ")
         print(" \n".join([str(i+1) + ") " + student.getName() + f" [{student.get_type()}]" for i,
                           student in enumerate(self.__students)]))
+        print("\n")
 
     def get_students_by_type(self, type):
-        print(f"{type.name} Students: ")
+        print(f"\n{type.name} Students: ")
         print(" \n".join([str(i+1) + ") " + student.getName() + f" [{student.get_type()}]" for i,
                           student in enumerate(self.__students) if student.type == type.name]))
+        print("\n")
