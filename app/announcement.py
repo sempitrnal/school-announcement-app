@@ -27,6 +27,7 @@ class Subject:
 
 
 class Announcement:
+
     def __init__(self, name, type, description) -> None:
         self._name = name
         self._type = AnnouncementType(type).name

@@ -31,10 +31,3 @@ class Registrar(metaclass=Singleton):
         print(f"{type.name} Students: ")
         print(" \n".join([str(i+1) + ") " + student.getName() + f" [{student.get_type()}]" for i,
                           student in enumerate(self.__students) if student.type == type.name]))
-
-
-r = Registrar()
-r.add_student(Student("John", "Doe", 20, 1))
-r.add_student(Student("Jane", "Doe", 20, 2))
-r.get_students()
-r.get_students_by_type(StudentType.Elementary)

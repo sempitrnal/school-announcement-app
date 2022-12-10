@@ -12,7 +12,7 @@ class School(metaclass=Singleton):
 
     def start(self, choice):
         match choice:
-            case 1:  # student admission
+            case '1':  # student admission
 
                 fn = input("Enter student's first name: ")
 
@@ -23,22 +23,25 @@ class School(metaclass=Singleton):
 
                 self._reg.add_student(Student(fn, ln, age, type))
 
-            case 2:
+            case '2':
                 self._reg.get_students()
 
-            case 3:  # create blue memo
+            case '3':  # create blue memo
                 name = input("Enter name of memo: ")
                 content = input("Enter content of memo: \n\n>")
                 a = Announcement(name, 5, content)
                 self._uni_pres.createMemo(a, self._uni_sec)
-            case 4:
+
+            case '4':
                 name = input("Enter name of Announcement: ")
                 content = input("Enter content of Announcement:\n\n> ")
                 type = int(input(
                     "Enter type of Announcement [1] Holiday, [2] Elementary, [3] High School, [4] College: \n\n Type: "))
                 a = Announcement(name, type, content)
                 self._uni_sec.announce(a)
-            case 5:
+
+            case '5':
                 self._am.get_announcements()
+
             case other:
                 print("Invalid choice")
