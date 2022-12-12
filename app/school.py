@@ -52,7 +52,7 @@ class SchoolManager(School):
                 return -1
             case RegistrarAdmin.__qualname__:
                 while (choice !=0):
-                    print("[1] Add Student\n[2] View Student List\n[3] Create Announcement\n[4] View Recent Announcements \n\n[0] Logout")
+                    print("[1] Add Student\n[2] View Student List\n[3] Remove Student\n[4] Create Announcement\n[5] View Recent Announcements \n\n[0] Logout")
                     choice = int(input("What do you want to do? "))
                     match choice:
                         
@@ -70,8 +70,12 @@ class SchoolManager(School):
 
                         case 2:
                             super().getRegistrar().get_students()
-
                         case 3:
+                            super().getRegistrar().get_students()     
+                            removeStudent = int(input("Enter the ID from the list you wish to remove from the list: "))
+                            super().getRegistrar().remove_student(removeStudent)                      
+
+                        case 4:
                             name = input("Enter name of Announcement: ")
                             content = input("Enter content of Announcement:\n\n> ")
                             studType = int(input(
@@ -79,7 +83,7 @@ class SchoolManager(School):
                             a = Announcement(name, studType, content)
                             super().getUniSec().announce(a)
 
-                        case 4:
+                        case 5:
                             super().getAnnouncementManager().get_announcements()
 
                         case other:
