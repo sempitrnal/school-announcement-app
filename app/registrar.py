@@ -19,12 +19,15 @@ class Registrar(metaclass=Singleton):
             self.am.attach(s)
 
     def remove_student(self, student):
+        ctr=0
         for stud in self.__students:
-            self.__students.remove(stud)
-            self.am.detach(stud)
+            if(student == ctr):
+                self.__students.remove(stud)
+                self.am.detach(stud)
+            ctr=+1
         
     def get_students_list(self) -> list:
-        return self.__students;
+        return self.__students
     
     def get_students(self):
         print("\nStudents: ")
