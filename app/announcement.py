@@ -22,10 +22,10 @@ class Subject:
         self.observers.remove(observer)
 
     def notify(self, a):
-        [observer.update(a) 
-         for observer in self.observers 
-         if observer.type == a.get_type() 
-         or a.get_type() == AnnouncementType.Holiday.name 
+        [observer.update(a)
+         for observer in self.observers
+         if observer.type == a.get_type()
+         or a.get_type() == AnnouncementType.Holiday.name
          or a.get_type() == AnnouncementType.Blue_Memo.name]
 
 
@@ -62,8 +62,8 @@ class AnnouncementManager(Subject, metaclass=Singleton):
               for announcement in self.__announcements]))
 
     def get_announcements_by_type(self, type):
-        print("\n".join([announcement.to_string() 
-                         for announcement in self.__announcements 
-                         if announcement.get_type() == type 
-                         or announcement.get_type() == AnnouncementType.Holiday.name 
+        print("\n".join([announcement.to_string()
+                         for announcement in self.__announcements
+                         if announcement.get_type() == type
+                         or announcement.get_type() == AnnouncementType.Holiday.name
                          or announcement.get_type() == AnnouncementType.Blue_Memo.name]))
