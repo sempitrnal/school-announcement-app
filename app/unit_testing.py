@@ -20,9 +20,10 @@ class UnitTesting(unittest.TestCase):
     #     login = Login()
     #     logged = login.login
     #     logged.set_pword("John12345")
+    #     newpass = logged.get_pword
 
     #     # Assert
-    #     self.assertEqual(logged.get_pword, expectedNewPass)
+    #     self.assertEqual(newpass, expectedNewPass)
 
     def test_getRegistrar_should_add_student(self):
         # Arrange
@@ -50,33 +51,33 @@ class UnitTesting(unittest.TestCase):
         # assert false because after removing the student, the list should be empty
         self.assertEqual(False, expected)
 
-    # def test_getRegistrar_should_create_announcement(self):
-    #     # Arrange
-    #     expectedAnnouncementName = "Intrams"
-    #     expectedContent = "Starts tomorrow"
-    #     expectedType = "College"
+    def test_getRegistrar_should_create_announcement(self):
+        # Arrange
+        expectedAnnouncementName = "Intrams"
+        expectedContent = "Starts tomorrow"
+        expectedType = "College"
 
-    #     # Act
-    #     a = Announcement("Intrams", 4, "Starts tomorrow")
+        # Act
+        a = Announcement("Intrams", 4, "Starts tomorrow")
 
-    #     # Assert
-    #     self.assertEqual(a._name, expectedAnnouncementName)
-    #     self.assertEqual(a._description, expectedContent)
-    #     self.assertEqual(a._type, expectedType)
+        # Assert
+        self.assertEqual(a._name, expectedAnnouncementName)
+        self.assertEqual(a._description, expectedContent)
+        self.assertEqual(a._type, expectedType)
 
-    # def test_getUniPresident_should_create_blue_memo(self):
-    #     # Arrange
-    #     expectedName = "Intrams"
-    #     expectedContent = "No classes"
-    #     expectedType = "College"
+    def test_getUniPresident_should_create_blue_memo(self):
+        # Arrange
+        expectedName = "Intrams"
+        expectedContent = "No classes"
+        expectedType = "College"
 
-    #     # Act
-    #     a = Announcement("Intrams", 4, "No classes")
+        # Act
+        a = Announcement("Intrams", 4, "No classes")
 
-    #     # Assert
-    #     self.assertEqual(a._name, expectedName)
-    #     self.assertEqual(a._description, expectedContent)
-    #     self.assertEqual(a._type, expectedType)
+        # Assert
+        self.assertEqual(a._name, expectedName)
+        self.assertEqual(a._description, expectedContent)
+        self.assertEqual(a._type, expectedType)
 
 
 if __name__ == '__main__':
