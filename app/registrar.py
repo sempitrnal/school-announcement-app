@@ -25,7 +25,7 @@ class Registrar(metaclass=Singleton):
     def remove_student(self, student):
         ctr = 0
         for stud in self.__students:
-            if (student == ctr):
+            if student == ctr:
                 self.__students.remove(stud)
                 self.am.detach(stud)
             ctr = +1
@@ -34,13 +34,13 @@ class Registrar(metaclass=Singleton):
         return self.__students
 
     def get_students(self):
-        print("\nStudents: ")
-        print(" \n".join([str(i+1) + ") " + student.getName() + f" [{student.get_type()}]" for i,
+        print("\nStudents: \n[ID]:")
+        print(" \n".join(["["+str(i) + "] " + student.getName() + f" [{student.get_type()}]" for i,
                           student in enumerate(self.__students)]))
         print("\n")
 
     def get_students_by_type(self, type):
         print(f"\n{type.name} Students: ")
-        print(" \n".join([str(i+1) + ") " + student.getName() + f" [{student.get_type()}]" for i,
+        print(" \n".join(["["+str(i) + ") " + student.getName() + f" [{student.get_type()}]" for i,
                           student in enumerate(self.__students) if student.type == type.name]))
         print("\n")
