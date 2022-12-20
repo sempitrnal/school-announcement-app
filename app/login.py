@@ -1,4 +1,8 @@
-from users import *
+from person import *
+from registrarAdmin import *
+from Student import *
+from UniversityPresident import *
+from UniversitySecretary import *
 from school import *
 
 
