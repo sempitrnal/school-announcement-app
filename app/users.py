@@ -1,5 +1,3 @@
-
-
 from announcement import *
 import hashlib
 import string
@@ -18,7 +16,7 @@ class Person():
 
     def __init__(self, fn, ln, age, id) -> None:
         nfn = " ".join([a[0].upper() + a[1:].lower()
-                       for a in fn.split(" ") if a != ""])
+                       for a in fn.split(" ") if a != ""])  
         nln = " ".join([a[0].upper() + a[1:].lower()
                        for a in ln.split(" ") if a != ""])
         self.id = id
