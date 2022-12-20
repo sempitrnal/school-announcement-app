@@ -1,4 +1,8 @@
-from users import *
+from person import *
+from registrarAdmin import *
+from Student import *
+from UniversityPresident import *
+from UniversitySecretary import *
 from announcement import *
 from registrar import *
 from singleton import *
@@ -40,12 +44,12 @@ class SchoolManager(School):
                         case 1:
                             oldPass = input("Enter old password: ")
                             if (hashlib.md5((oldPass+'brow').encode()).hexdigest() == logged.get_pword()):
-                                newPass = input("Enter New Pass: ")
+                                newPass = input("Enter new Password: ")
                                 logged.set_pword(newPass)
                                 print(logged.get_pword())
                                 print("Successfully changed your password!\n\n")
                             else:
-                                print("Wrong Old Password!\n\n")
+                                print("Incorrect old Password!\n\n")
                         case 2:
                             super().getAnnouncementManager().get_announcements()
                         case 3:

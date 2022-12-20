@@ -1,5 +1,9 @@
+from person import *
+from registrarAdmin import *
+from Student import *
+from UniversityPresident import *
+from UniversitySecretary import *
 from singleton import *
-from users import *
 from abc import abstractmethod
 from announcement import *
 
