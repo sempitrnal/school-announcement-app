@@ -11,20 +11,6 @@ from abc import abstractmethod
 class UnitTesting(unittest.TestCase):
     # The Arrange section of a unit test method initializes objects and sets the value of the data that is passed to the method under test. The Act section invokes the method under test with the arranged parameters. The Assert section verifies that the action of the method under test behaves as expected.
 
-    # def test_getStudent_should_update_password(self):
-    #     # Arrange
-    #     expectedNewPass = "John12345"
-
-    #     # Act
-    #     logged: Person = None
-    #     login = Login()
-    #     logged = login.login
-    #     logged.set_pword("John12345")
-    #     newpass = logged.get_pword
-
-    #     # Assert
-    #     self.assertEqual(newpass, expectedNewPass)
-
     def test_getRegistrar_should_add_student(self):
         # Arrange
         student = Student("Johnny", "Silverhand", 22, 3, 0)
@@ -33,7 +19,7 @@ class UnitTesting(unittest.TestCase):
 
         registrar.add_student(student)
         expectedStudent = [
-            stud for stud in registrar.get_students_list() if stud == student][0]
+            stud for stud in registrar.get_students_list() if stud == student][0] #this fetches the value of the first index in the list
 
     # Assert
         self.assertEqual(student, expectedStudent)
